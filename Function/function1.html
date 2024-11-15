@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InterviewMate</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #4a90e2;
+            width: 100%;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Popup Modal Styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .popup-content h3 {
+            margin-bottom: 1rem;
+            color: #4a90e2;
+        }
+
+        .popup-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .popup-content ul li {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .close-button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            float: right;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .hero p {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .cta-button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #357abd;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 2rem;
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>InterviewMate</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#" onclick="togglePopup()">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h2>Practice Real Interviews, Improve Your English</h2>
+        <p>Join a platform designed to help tech students practice interviews in English, improve their confidence, and get matched with peers.</p>
+        <button class="cta-button" onclick="showSignUp()">Get Started</button>
+    </section>
+
+    <!-- Popup Overlay -->
+    <div class="popup-overlay" id="featurePopup">
+        <div class="popup-content">
+            <h3>Platform Features</h3>
+            <button class="close-button" onclick="togglePopup()">Close</button>
+            <ul>
+                <li>🌐 Real-Time Video Interviews with Peers</li>
+                <li>📊 Skill-Based Matching for Accurate Pairing</li>
+                <li>📝 AI-Powered Feedback and Suggestions</li>
+                <li>🔍 Detailed Interview Analysis and Reports</li>
+                <li>💬 Integrated Chat for Easy Communication</li>
+                <li>📈 Progress Tracking and Goal Setting</li>
+                <li>🤝 Community Support and Networking</li>
+                <li>📅 Schedule Interviews According to Availability</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 InterviewMate. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to redirect to register page
+        function showSignUp() {
+            window.location.href = "register.html";
+        }
+
+        // Function to toggle the popup visibility
+        function togglePopup() {
+            const popup = document.getElementById("featurePopup");
+            popup.style.display = popup.style.display === "flex" ? "none" : "flex";
+        }
+    </script>
+
+</body>
+</html>
